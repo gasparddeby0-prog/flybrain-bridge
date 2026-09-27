@@ -102,12 +102,12 @@ class $modify(FlyBrainPlayLayer, PlayLayer) {
         if (g_autoCheckpoints && m_isPracticeMode && !m_player1->m_isDead && m_player1->m_isOnGround
             && !m_player1->m_isShip && m_player1->getPositionX() - g_lastCheckpointX > CHECKPOINT_EVERY) {
             auto s = lasers();
-            // lasers : " L d1 t1 d2 t2 ..." ; on exige qu'aucun obstacle ne soit à moins de 3 blocs
+            // lasers : " L d1 t1 d2 t2 ..." ; on exige qu'aucun obstacle ne soit à moins de 6 blocs
             bool clear = true;
             float d; int t; const char* p = s.c_str() + 3;
             for (int i = 0; i < 6; i++) {
                 if (sscanf(p, "%f %d", &d, &t) != 2) break;
-                if (t != 0 && d < 90.f) clear = false;
+                if (t != 0 && d < 180.f) clear = false;
                 for (int sp = 0; sp < 2 && *p; ) { if (*p == ' ') sp++; p++; if (sp == 2) break; }
             }
             if (clear) {

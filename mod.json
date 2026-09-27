@@ -5,7 +5,7 @@
 	},
 	"id": "vincentdeby.flybrain-bridge",
 	"name": "Fly Brain Bridge",
-	"version": "v1.2.0",
+	"version": "v1.2.1",
 	"developer": "Vincent Deby",
 	"description": "Relie le jeu au script du cerveau de mouche : appuis de saut et état du niveau en UDP local."
 }
