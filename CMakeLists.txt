@@ -18,3 +18,5 @@ add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
 setup_geode_mod(${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} ws2_32)
+# net.cpp utilise winsock2 : pas d'en-tête précompilé (il contient déjà windows.h)
+set_source_files_properties(src/net.cpp PROPERTIES SKIP_PRECOMPILE_HEADERS ON)
